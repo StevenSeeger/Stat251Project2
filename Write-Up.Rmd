@@ -1,0 +1,26 @@
+---
+title: "Average Age of Death between Marital Status"
+author: "Steven Seeger, Seth Pixton"
+date: "12/06/2018"
+output: pdf_document
+---
+
+```{r setup, echo=FALSE}
+library(Bolstad)
+load("data.RData")
+```
+
+
+# Introduction
+
+The question we decided to research was if there was an effect of average age of death based upon the marital status of an individual in the US. The martial statuses we will be looking at are Single and Married. The value of this question is that if we can determine if this has an effect, there could be influential data in the insurance realm, and probably cause research in to areas of why this happens to be.
+
+# Literature Review
+
+A study was conducted by Dustin C. Brown about Life Expectancy Differentials by Marital Status, Individuals’ Own Education, and Spousal Education in the United States. (http://paa2014.princeton.edu/papers/142823) This was interesting, but did not exactly match the study that we are conducting. He used life expectancy as his research and we are using average age of death. His conclusion was that there is a difference between many groups for life expectancy at age 55.
+
+# Methods
+
+We gathered our data from Kaggle.com. (Cite: https://www.kaggle.com/cdc/mortality/home) From the documentation for this data set, it states that "[a]ll data comes from the CDC’s National Vital Statistics Systems, with the exception of the Icd10Code, which are sourced from the World Health Organization." We choose to go with a normal prior distribution. This is because online it has been determined that the average age of death is 78.89 with a standard deviation of 15 years. We feel like this is an appropriate prior for the data because most current data seems to support this theory, and it is a well researched topic. Our likelihood distribution is the normal-normal because we have data for a known mu and sigma. We believe the data is normal its distribution for each.
+
+# Results
