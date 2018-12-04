@@ -1,7 +1,7 @@
 library(MASS)
 library(invgamma)
 
-y<-married$detail_age
+y<-widow$detail_age
 n<-length(y)
 ybar<-mean(y)
 
@@ -32,14 +32,13 @@ for(j in 2:nRep) {
   sig2[j]<-rinvgamma(1,astar,rate=bstar)
 }
 
-marriedMu <- mu
-marriedSig2 <- sig2
+single18Mu <- mu
+single18Sig2 <- sig2
 
-plot(marriedMu, type='l')
-plot(marriedSig2, type='l')
+plot(single18Mu, type='l')
+plot(single18Sig2, type='l')
 
-mean(marriedMu[-c(1:500)])
-sqrt(mean(marriedSig2[-c(1:500)]))
+mean(single18Mu[-c(1:500)])
+sqrt(mean(single18Sig2[-c(1:500)]))
 
-quantile(marriedMu[-c(1:500)], c(0.025, 0.975))
-quantile(marriedSig2[-c(1:500)], c(0.025, 0.975))
+

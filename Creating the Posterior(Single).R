@@ -5,8 +5,8 @@ y<-single$detail_age
 n<-length(y)
 ybar<-mean(y)
 
-m<-78.89
-v<-15
+m<-0
+v<-10^2
 a<-0.01
 b<-0.01
 
@@ -34,3 +34,9 @@ for(j in 2:nRep) {
 
 singleMu <- mu
 singleSig2 <- sig2
+
+plot(singleMu, type='l')
+plot(singleSig2, type='l')
+
+mean(singleMu[-c(1:500)])
+sqrt(mean(singleSig2[-c(1:500)]))
