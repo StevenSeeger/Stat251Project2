@@ -1,7 +1,9 @@
-library(readr)
-
-AllData <- read_csv("\2015_data.csv")
-AllData <- AllData[c(8,15)]
+# library(readr)
+# 
+# AllData <- read_csv("\2015_data.csv")
+# AllData <- AllData[c(8,15)]
+# 
+# save(AllData, file="data.RData")
 
 library(dplyr)
 married <- AllData %>% filter(marital_status == "M")
@@ -20,4 +22,4 @@ divorced <- AllData %>% filter(marital_status == "D")
 divorced <- divorced %>% mutate(detail_age = as.numeric(detail_age))
 divorced <- divorced %>% filter(detail_age >= 18 | detail_age <= 150)
 
-save(AllData, single, married, file="data.RData")
+
