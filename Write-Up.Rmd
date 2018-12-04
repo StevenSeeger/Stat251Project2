@@ -21,6 +21,6 @@ A study was conducted by Dustin C. Brown about Life Expectancy Differentials by 
 
 # Methods
 
-We gathered our data from Kaggle.com. (Cite: https://www.kaggle.com/cdc/mortality/home) From the documentation for this data set, it states that "[a]ll data comes from the CDC’s National Vital Statistics Systems, with the exception of the Icd10Code, which are sourced from the World Health Organization." We choose to go with a normal prior distribution. This is because online it has been determined that the average age of death is 78.89 with a standard deviation of 15 years. We feel like this is an appropriate prior for the data because most current data seems to support this theory, and it is a well researched topic. Our likelihood distribution is the normal-normal because we have data for a known mu and sigma. We believe the data is normal its distribution for each.
+We gathered our data from Kaggle.com. (Cite: https://www.kaggle.com/cdc/mortality/home) From the documentation for this data set, it states that "[a]ll data comes from the CDC’s National Vital Statistics Systems, with the exception of the Icd10Code, which are sourced from the World Health Organization." We choose to go with a Normal-Normal-Inverse-Gamma prior distribution. This is because we feel that deaths will be normally spread out around the center of the data
 
 # Results
