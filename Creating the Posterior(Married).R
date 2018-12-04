@@ -7,8 +7,8 @@ ybar<-mean(y)
 
 m<-78.89
 v<-15
-a<-1
-b<-2
+a<-0.01
+b<-0.01
 
 #Create vectors
 mu<-numeric()
@@ -32,5 +32,5 @@ for(j in 2:nRep) {
   sig2[j]<-rinvgamma(1,astar,rate=bstar)
 }
 
-mean(mu)
-sqrt(mean(sig2))
+marriedMu <- mu
+marriedSig2 <- sig2
