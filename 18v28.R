@@ -1,0 +1,17 @@
+par(mfrow=c(2,2))
+hist(single$detail_age)
+hist(married$detail_age)
+hist(divorced$detail_age)
+hist(widow$detail_age)
+
+married2 <- married %>% filter(detail_age >= 28 & detail_age <= 150)
+single2 <- single %>% filter(detail_age >= 28 & detail_age <= 150)
+widow2 <- widow %>% filter(detail_age >= 28 & detail_age <= 150)
+divorced2 <- divorced %>% filter(detail_age >= 28 & detail_age <= 150)
+
+par(mfrow=c(1,1))
+par(mfrow=c(2,2))
+hist(single2$detail_age)
+hist(married2$detail_age)
+hist(divorced2$detail_age)
+hist(widow2$detail_age)
