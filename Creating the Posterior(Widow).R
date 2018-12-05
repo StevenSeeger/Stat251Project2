@@ -1,7 +1,7 @@
 library(MASS)
 library(invgamma)
 
-y<-widow$detail_age
+y<-single$detail_age
 n<-length(y)
 ybar<-mean(y)
 
