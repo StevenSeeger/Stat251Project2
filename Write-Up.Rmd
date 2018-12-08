@@ -12,6 +12,7 @@ output: pdf_document
 ```{r setup, echo=FALSE}
 library(knitr)
 library(kableExtra)
+library(invgamma)
 load("data.RData")
 load("Summary Table.RData")
 ```
@@ -21,6 +22,8 @@ load("Summary Table.RData")
 
 The question we decided to research was if there was an effect of average age of death based upon the marital status of an individual in the US. The martial statuses we will be looking at are Divorced and Married. The value of this question is that if we can determine if this has an effect, there could be influential data in the insurance realm, and probably cause research in to areas of why this happens to be.
 
+All four group's EDA are included for the purpose of viewing and later interest. We will not be exploring this further than that.
+
 # Literature Review
 
 A study was conducted by Dustin C. Brown about Life Expectancy Differentials by Marital Status, Individuals’ Own Education, and Spousal Education in the United States. (http://paa2014.princeton.edu/papers/142823) This was interesting, but did not exactly match the study that we are conducting. He used life expectancy as his research and we are using average age of death. His conclusion was that there is a difference between many groups for life expectancy at age 55.
@@ -28,6 +31,25 @@ A study was conducted by Dustin C. Brown about Life Expectancy Differentials by 
 # Methods
 
 We gathered our data from Kaggle.com. (Cite: https://www.kaggle.com/cdc/mortality/home) From the documentation for this data set, it states that "[a]ll data comes from the CDC’s National Vital Statistics Systems, with the exception of the Icd10Code, which are sourced from the World Health Organization." We choose to go with a Normal-Normal-Inverse-Gamma prior distribution. This is because we feel that deaths will be normally spread out around the center of the data. We went with an uninformative prior of N(0, 10^2) and IG(0.01, 0.01). We felt that this was appropriate given the vast amount of data we had.
+
+The following two graphs show the Prior Distributions we decided to use.
+
+```{r}
+df <- rnorm(10000, 0, 10)
+
+df <- as.data.frame(df)
+
+ggplot(df, aes(x=df)) + 
+ geom_histogram(aes(y=..density..), colour="black", fill="white", binwidth = 1)+
+ geom_density(alpha=.2, fill="#FF6666")+
+  ggtitle("Prior N(0,10^2)")
+
+x <- seq(0, 5, .01)
+qplot(x, dinvgamma(x, 0.01, 0.01), geom = "line") +
+  ggtitle("Prior IG(0.01,0.01)")
+```
+
+The posterior distribtuions will allow us to answer our research question by allowing us to see if our data is different at a significant level. We can use the difference in means to detect if there is a true difference between the age of death between the two groups.
 
 # Exploratory Data Analysis
 

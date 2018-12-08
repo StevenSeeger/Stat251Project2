@@ -35,8 +35,13 @@ for(j in 2:nRep) {
 divorcedMu <- mu
 divorcedSig2 <- sig2
 
-plot(divorcedMu, type='l')
+
+par(mfrow=c(2,2))
+plot(divorcedMu, type='l', main = "Mean of Divorced Age of Death")
+acf(divorcedMu[-c(1:50)])
 plot(divorcedSig2, type='l')
+acf(divorcedSig2[-c(1:50)])
+par(mfrow=c(1,1))
 
 mean(divorcedMu[-c(1:500)])
 sqrt(mean(divorcedSig2[-c(1:500)]))
