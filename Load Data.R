@@ -5,6 +5,8 @@
 # 
 # save(AllData, file="data.RData")
 
+load("data.RData")
+
 library(dplyr)
 married <- AllData %>% filter(marital_status == "M")
 married <- married %>% mutate(detail_age = as.numeric(detail_age))
