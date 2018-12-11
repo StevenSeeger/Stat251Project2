@@ -22,7 +22,7 @@ load("Summary Table.RData")
 
 The question we decided to research was if there was an effect of average age of death based upon the marital status of an individual in the US. The martial statuses we will be looking at are Divorced and Married. The value of this question is that if we can determine if this has an effect, there could be influential data in the insurance realm, and probably cause research in to areas of why this happens to be.
 
-All four group's EDA are included for the purpose of viewing and later interest. We will not be exploring this further than that.
+All four groups' EDA are included for the purpose of viewing and later interest. We will not be exploring this further than that.
 
 # Literature Review
 
