@@ -15,10 +15,10 @@ mu<-numeric()
 sig2<-numeric()
 
 nRep<-10000
-#The order of sig2 and mu doesn't matter--the starting value doesn't either
+
 sig2[1]<-var(y)
-mu[1]<-ybar #optional--you only need to start with one of the two
-#mu[1]<--3000
+mu[1]<-ybar
+
 
 for(j in 2:nRep) {
   #update mu based on sigma^2
@@ -45,3 +45,6 @@ par(mfrow=c(1,1))
 
 mean(divorcedMu[-c(1:500)])
 sqrt(mean(divorcedSig2[-c(1:500)]))
+
+quantile(divorcedMu[-c(1:500)], c(0.025, 0.975))
+quantile(divorcedSig2[-c(1:500)], c(0.025, 0.975))
