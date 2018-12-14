@@ -121,6 +121,32 @@ divorcedDP <- rbind(divorcedD1,priorD)
 
 ```
 
+Shown first are the trace plots and the ACF plots for the Average age of Death for the Divorced population.
+
+```{r, echo=FALSE}
+par(mfrow=c(2,2))
+plot(divorcedMu[-c(1:500)], type='l', main = "Trace Plot Mean Divorced Age", ylab="Mean of Age of Death")
+acf(divorcedMu[-c(1:500)], main = "Mean ACF")
+plot(divorcedSig2[-c(1:500)], type='l', main = "Trace Plot Sigma^2 Divorced Age", ylab="Mean of Age of Death")
+acf(divorcedSig2[-c(1:500)], main = "Sigma^2 ACF")
+par(mfrow=c(1,1))
+```
+
+We took a burn in of 500 observations, and based off of the trace plots and the acf plots, it looks like the data did converge and can be used.
+
+Shown next are the trace plots and the ACF plots for the Married population.
+
+```{r, echo=FALSE}
+par(mfrow=c(2,2))
+plot(marriedMu[-c(1:500)], type='l', main = "Trace Plot Mean Married Age", ylab="Mean of Age of Death")
+acf(marriedMu[-c(1:500)], main = "Mean ACF")
+plot(marriedSig2[-c(1:500)], type='l', main = " Trace Plot Sigma^2 Married", ylab="Mean of Age of Death")
+acf(marriedSig2[-c(1:500)], main = "Sigma^2 ACF")
+par(mfrow=c(1,1))
+```
+
+A burn in of 500 observations were also taken out. As can be seen from the trace plots and the ACF, the data did converge for this group also, so the posterior distribuion can be used.
+
 Included next is a graph of the posterior distriution of the married and divorced average age of death. The dashed lines are the means of the distributions. We see that there is a difference between the average of death between the two groups.
 
 ```{r, echo=FALSE}

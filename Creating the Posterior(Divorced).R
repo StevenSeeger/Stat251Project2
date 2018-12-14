@@ -39,10 +39,10 @@ save(divorcedMu, divorcedSig2, file="divorced.RData")
 
 
 par(mfrow=c(2,2))
-plot(divorcedMu, type='l', main = "Mean of Divorced Age of Death")
-acf(divorcedMu[-c(1:50)])
-plot(divorcedSig2, type='l')
-acf(divorcedSig2[-c(1:50)])
+plot(divorcedMu[-c(1:500)], type='l', main = "Mean of Divorced Age of Death", ylab="Mean of Age of Death")
+acf(divorcedMu[-c(1:500)], main = "Mean of Divorced Age of Death")
+plot(divorcedSig2[-c(1:500)], type='l', main = "Sigma^2 of Divorced Age of Death", ylab="Mean of Age of Death")
+acf(divorcedSig2[-c(1:500)], main = "Sigma^2 of Divorced Age of Death")
 par(mfrow=c(1,1))
 
 mean(divorcedMu[-c(1:500)])
