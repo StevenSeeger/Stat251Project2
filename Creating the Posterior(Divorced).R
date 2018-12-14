@@ -35,6 +35,8 @@ for(j in 2:nRep) {
 divorcedMu <- mu
 divorcedSig2 <- sig2
 
+save(divorcedMu, divorcedSig2, file="divorced.RData")
+
 
 par(mfrow=c(2,2))
 plot(divorcedMu, type='l', main = "Mean of Divorced Age of Death")

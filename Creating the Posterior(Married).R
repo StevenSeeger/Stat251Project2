@@ -34,6 +34,8 @@ for(j in 2:nRep) {
 marriedMu <- mu
 marriedSig2 <- sig2
 
+save(marriedMu, marriedSig2, file="married.RData")
+
 plot(marriedMu, type='l')
 plot(marriedSig2, type='l')
 
